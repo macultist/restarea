@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#e9edf2"><meta name="description" content="휴게소 물가 레이더의 데이터 출처, 표준 메뉴 묶음, 물가 지수 계산 방법">
+<meta property="og:title" content="방법과 출처 · 휴게소 물가 레이더"><meta property="og:description" content="휴게소 물가 레이더의 데이터 출처, 표준 메뉴 묶음, 물가 지수 계산 방법"><meta property="og:type" content="website"><meta property="og:url" content="https://macultist.github.io/restarea/about.html"><meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary"><link rel="canonical" href="https://macultist.github.io/restarea/about.html">
+<title>방법과 출처 · 휴게소 물가 레이더</title>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{color-scheme:light;--bg:#e9edf2;--surface:#fff;--ink:#0f1b2d;--muted:#55627a;--line:#cfd6e0;--navy:#0f1b2d;--accent:#2b5db8;--accent-soft:#e3ebfa;--cheap:#0d9f7c;--cheap-soft:#dff5ec;--pricey:#d0433b;--pricey-soft:#fbe3e1;--mid:#6b7890;--mid-soft:#e6eaf0}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Pretendard Variable",Pretendard,-apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;line-height:1.55;word-break:keep-all}
+a{color:var(--accent)}a:hover{text-decoration-thickness:2px}
+.wrap{max-width:900px;margin:0 auto;padding:28px 20px 80px}
+header.top{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:baseline;margin-bottom:28px}
+header.top .brand{font-size:20px;font-weight:800;color:var(--navy);text-decoration:none;letter-spacing:-.01em}
+header.top nav{display:flex;gap:14px;flex-wrap:wrap;font-size:14px}
+header.top nav a{color:var(--muted);text-decoration:none}header.top nav a:hover,header.top nav a.on{color:var(--navy);font-weight:700}
+header.top .home{margin-left:auto;font-size:13px;color:var(--muted);text-decoration:none}
+h1{font-size:26px;margin:0 0 6px;letter-spacing:-.01em;color:var(--navy)}
+h1::after{content:"";display:block;width:36px;height:3px;background:var(--accent);margin-top:10px;border-radius:2px}
+h2{font-size:18px;margin:36px 0 12px;color:var(--navy)}
+p.lead{margin:0 0 20px;color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:20px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;box-shadow:0 1px 2px rgba(15,27,45,.06)}
+.card .k{font-size:12px;color:var(--muted)}.card .v{font-size:22px;font-weight:800;margin-top:2px;letter-spacing:-.01em}
+.card .s{font-size:12px;color:var(--muted);margin-top:2px}
+.tbl{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:0 1px 2px rgba(15,27,45,.06)}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:520px}
+th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
+th{font-size:12px;color:var(--muted);font-weight:600;background:#f6f8fb;position:sticky;top:0}
+tr:last-child td{border-bottom:0}td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+td.wrap-ok{white-space:normal}
+.badge{display:inline-block;padding:2px 8px;border-radius:999px;font-size:12px;font-weight:700;line-height:1.5}
+.badge.cheap{background:var(--cheap-soft);color:var(--cheap)}.badge.pricey{background:var(--pricey-soft);color:var(--pricey)}
+.badge.mid{background:var(--mid-soft);color:var(--mid)}.badge.na{background:var(--mid-soft);color:var(--muted)}
+.dev.pos{color:var(--pricey);font-weight:700}.dev.neg{color:var(--cheap);font-weight:700}.dev.zero{color:var(--muted)}
+.note{background:var(--accent-soft);border:1px solid #c9d8f5;border-radius:12px;padding:14px 16px;font-size:14px;color:#22406f}
+.empty{background:var(--surface);border:1px dashed var(--line);border-radius:12px;padding:28px 20px;text-align:center;color:var(--muted)}
+input.filter{width:100%;padding:11px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;font-size:15px;margin:0 0 12px;background:var(--surface)}
+.muted{color:var(--muted);font-size:13px}
+footer{margin-top:48px;color:var(--muted);font-size:13px;line-height:1.7}
+ul.plain{padding-left:18px}ul.plain li{margin:4px 0}
+.hist{font-size:12px;color:var(--muted);white-space:normal}
+@media(max-width:560px){.wrap{padding:20px 16px 60px}h1{font-size:22px}th,td{padding:8px 10px}}
+</style></head><body><div class="wrap">
+<header class="top"><a class="brand" href="./">🛣️ 휴게소 물가 레이더</a><nav><a href="./">요약</a><a href="changes.html">가격 변동</a><a href="archive.html">아카이브</a><a href="about.html" class="on">방법·출처</a></nav><a class="home" href="https://macultist.github.io/">Macultist ↗</a></header>
+<h1>방법과 출처</h1>
+<p class="lead">숫자를 어디서 가져오고 어떻게 판정하는지 그대로 적습니다.</p>
+<h2>데이터 출처</h2>
+<ul class="plain">
+<li>한국도로공사 고속도로 공공데이터 포털(data.ex.co.kr)의 「휴게소 푸드메뉴 현황」 오픈API. 휴게소명·노선·방향·매장·음식명·가격·대표메뉴 여부를 제공합니다.</li>
+<li>가격은 휴게소 운영업체가 도로공사에 등록한 값입니다. 현장 가격표와 시차가 있을 수 있으며, 등록 누락·오타도 그대로 반영됩니다.</li>
+<li>봇(GitHub Actions)이 매일 전체 목록을 받아 비교하고, 내용이 바뀐 날만 날짜별 스냅샷(JSON)으로 저장한 뒤 이 페이지들을 다시 만듭니다.</li>
+</ul>
+<h2>표준 메뉴 묶음</h2>
+<p class="muted">음식명에 아래 낱말이 들어가면 같은 묶음으로 봅니다. 한 휴게소에 같은 묶음 메뉴가 여럿이면 가장 싼 것 하나만 셉니다. 전국 비교표에는 5곳 이상에서 팔리는 묶음만 올립니다.</p>
+<div class="tbl"><table><thead><tr><th>묶음</th><th>매칭 낱말(정규식)</th></tr></thead><tbody>
+<tr><td>우동</td><td><code>우동</code></td></tr><tr><td>라면</td><td><code>라면|라멘</code></td></tr><tr><td>돈까스</td><td><code>돈까스|돈가스|돈카츠</code></td></tr><tr><td>국밥</td><td><code>국밥</code></td></tr><tr><td>비빔밥</td><td><code>비빔밥</code></td></tr><tr><td>된장찌개</td><td><code>된장</code></td></tr><tr><td>김치찌개</td><td><code>김치찌개|김치찜</code></td></tr><tr><td>순두부</td><td><code>순두부</code></td></tr><tr><td>잔치국수</td><td><code>잔치국수|멸치국수</code></td></tr><tr><td>칼국수</td><td><code>칼국수</code></td></tr><tr><td>제육</td><td><code>제육</code></td></tr><tr><td>불고기</td><td><code>불고기</code></td></tr><tr><td>짜장면</td><td><code>짜장|자장</code></td></tr><tr><td>짬뽕</td><td><code>짬뽕</code></td></tr><tr><td>김밥</td><td><code>김밥</code></td></tr><tr><td>호두과자</td><td><code>호두과자|호두 과자</code></td></tr><tr><td>핫도그</td><td><code>핫도그|핫바</code></td></tr><tr><td>떡꼬치</td><td><code>떡꼬치</code></td></tr><tr><td>소떡소떡</td><td><code>소떡</code></td></tr><tr><td>통감자</td><td><code>통감자|알감자</code></td></tr><tr><td>어묵</td><td><code>어묵|오뎅</code></td></tr><tr><td>만두</td><td><code>만두</code></td></tr><tr><td>아메리카노</td><td><code>아메리카노</code></td></tr><tr><td>카페라떼</td><td><code>카페라떼|카페 라떼|라떼</code></td></tr>
+</tbody></table></div>
+<h2>휴게소 물가 지수</h2>
+<ul class="plain">
+<li>휴게소가 파는 표준 메뉴마다 「내 가격 ÷ 전국 중간값 − 1」을 구합니다. 중간값(가격을 한 줄로 세웠을 때 가운데 값)을 쓰는 이유는 한두 개의 극단값에 흔들리지 않기 위해서입니다.</li>
+<li>그 편차들의 중간값이 물가 지수입니다. 표준 메뉴가 3개 미만이면 판정을 보류합니다.</li>
+<li>판정: -5% 이하 <span class="badge cheap">저렴</span> / 그 사이 <span class="badge mid">보통</span> / +5% 이상 <span class="badge pricey">비쌈</span></li>
+<li>이 지수는 "표준 메뉴 기준 상대 가격"이지 맛·양·품질 평가가 아닙니다.</li>
+</ul>
+<h2>가격 변동</h2>
+<p class="muted">직전 스냅샷과 「휴게소+방향+매장+음식명」이 같은 항목의 가격을 비교합니다. 음식명이 바뀌면 신규/삭제로 잡히므로 변동 건수는 실제보다 부풀 수 있습니다.</p>
+<h2>한계</h2>
+<ul class="plain">
+<li>도로공사가 운영하지 않는 민자고속도로 휴게소는 빠질 수 있습니다.</li>
+<li>같은 이름의 메뉴라도 양·구성이 다를 수 있어 가격 차이가 곧 바가지를 뜻하지는 않습니다.</li>
+<li>오류 제보·문의는 저장소 이슈로 남겨 주세요.</li>
+</ul>
+<footer>출처: 한국도로공사 고속도로 공공데이터 포털(휴게소 푸드메뉴 현황). 가격은 도로공사가 공개한 등록 정보이며 현장 가격과 다를 수 있습니다. 봇이 매일 자동 수집·공개합니다.<br>© 2026 Macultist. All rights reserved. 본 사이트의 화면 구성·판정 결과·정리 데이터의 무단 복제·전재·재배포를 금지합니다.</footer>
+</div></body></html>
