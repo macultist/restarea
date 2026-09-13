@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://macultist.github.io/restarea/sitemap.xml
